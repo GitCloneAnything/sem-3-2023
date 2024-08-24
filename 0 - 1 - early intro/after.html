@@ -1,0 +1,402 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            /* justify-content: center; */
+            margin-left: 20%;
+            padding-bottom: 300px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="op">
+
+    </div>
+    <script>
+    //  const arr = [1,2,3,4,5,6,7]
+    //  for(let value in arr){
+    //     console.log(value)
+    //  }
+    //  const arr2 = new Array(10)
+    //  console.log(arr2.length)
+
+    //  console.log(arr.indexOf(3))
+
+    //  for(let i = arr.length - 1; i >= 0; i--){
+    //     arr[i + 1] = arr[i]
+    //  }
+    //  arr[0] = 8;
+    // console.log("inserting in begining with loop", arr)
+
+
+    // arr.unshift(8);
+    // console.log("inserting in begining with unshift method",arr)
+
+
+    // for(let i = 1; i < arr.length; i++){
+    //     arr[i - 1] = arr[i]
+    // }
+    // arr.length = arr.length-1
+    // console.log("removing element from begining using loop - ",arr)
+
+    // let returned = arr.shift();
+    // console.log(returned)
+    // console.log("removing element from begining using shift method", arr)
+
+
+    // const arr2 = arr.slice(1, 5); // end index - 1
+    // console.log(arr)
+
+    // const arr2 = arr.splice(2,1,"hello") // this will return the removed array
+    // console.log(arr2)
+
+    // for (let value of arr){
+    //     console.log(value)
+    // }
+    // console.log(arr)
+
+
+    // Array.prototype.iterate = function(){
+    //     for(let i = 0; i<this.length; i++){
+    //         console.log(arr[i])
+    //     }
+    // }
+
+    // arr.iterate()
+
+    
+    // const arr2 = [1,2,"wel",4,5,"come",7]
+    // arr2.forEach(function(value, index){
+    //     console.log(value);
+    // })
+
+
+    // iterate(arr2)
+
+    // const abc = arr.filter((value)=>{
+    //     if(value % 2 == 0){
+    //         return true
+    //     }
+    // })
+
+    // console.log(abc);
+
+    // const def = arr.map((value) =>{
+    //     return value + 10;
+    // })
+    // console.log(def);
+
+    // function toggle(){
+    //     if(value == "* "){
+    //             value = "# "
+    //     }else {
+    //             value = "* "
+    //     }
+    // }
+
+    // let value = "# "
+    // for (let i = 1 ; i < 9; i ++){
+    //     toggle()
+    //     for(let j = 1; j < 9; j ++){
+    //         document.write(value)
+    //         toggle()
+    //     }
+    //     document.write("<br/>")
+    // }
+
+    // let value;
+    // for (let i = 1; i < 9; i++) {
+    //     value = (i % 2 === 0) ? "# " : "* ";
+    //     for (let j = 1; j < 9; j++) {
+    //         document.write(value);
+    //         value = (value === "# ") ? "* " : "# ";
+    //     }
+    //     document.write("<br/>");
+    // }
+
+
+    // let arr = [1,2,3, 4 , "hello"]
+    // let brr = [...arr]
+
+    // brr[0] = "test"
+    // console.log(arr)
+    // console.log(brr);
+    
+
+    // const obj = {
+    //     name: "aman deshwal",
+    //     change: function (){
+    //         name = "himanshu"
+    //         console.log(name);
+    //     }
+    // }
+
+    // console.log(obj.name);
+
+    // obj.change()
+
+    const out = document.querySelector("#op");
+
+
+    // Array.prototype.iterate = function(){
+        
+    // }
+
+    const arr = [1,2,3,4,5]
+
+    let str = "";
+        for(let value of arr){
+            str += `${value}`
+            out.innerHTML = str;
+        }
+    
+
+    // arr.iterate();
+
+    
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+    //   function sum(a,b){
+    //     return a + b
+    //   }
+
+
+    // let sum = (a,b) => a + b
+    // let sub = (a,b) => a - b
+    // let mul = (a,b) => a * b
+    // let div = (a,b) => a / b
+    // function calculate(n1, n2, operation){
+    //     console.log(operation(n1, n2))
+    // }
+    // calculate(2,3,sub)
+
+
+    // const arr = [1,2,[3,4,[5,6,[7,8]]]];
+    // const flat = arr.flat(0) //flat method flattens the nested array and make it into one array
+    // console.log(flat);
+
+    //     Array.prototype.fillValue= function(low, high){
+    //         let j = 0;
+    //         for(let i = low ; i<=high; i++){
+    //             this[j++] = i;
+    //         }
+    //     }
+
+    // arr.fillValue(2,100);
+    // console.log(arr)
+    
+    // console.log(arr)
+
+
+    // PROTOTYPE FOR MY FOR EACH
+    
+    // Array.prototype.myForEach = function(callbackFn){
+    //     for(let index=0; index<this.length; index++){
+    //         callbackFn(this[index], index, this)
+    //     }
+    // }
+
+    // const arr = [1,2,3,4,5,6]
+
+    // function myForEach(arr, callbackFn){
+    //     for(let index=0; index<arr.length; index++){
+    //         callbackFn(arr[index], index, arr)
+    //     }
+    // }
+    
+    // function  iterate(value, index, array){
+    //     console.log(value*3)
+    // }
+    
+    // myForEach(arr,iterate)
+
+//  MY MAP FUNCTION
+
+// const arr = [1,2,3,4,5,6]
+
+// function myMap(arr, callbackFn){
+//     let arr1 = [];
+//     for(let index=0; index<arr.length; index++){
+//         const returned = callbackFn(arr[index], index, arr)
+//         arr1[index] = returned
+//     }
+//     return arr1
+// }
+
+// const arr2 = myMap(arr,function(value, index, array){
+//     return value == 3
+// })
+// console.log(arr2)
+
+// MY FILTER FUNCTION
+
+// const arr = [1,2,3,4,5,6]
+
+// function myFilter(arr, callbackFn){
+//     let arr1 = [];
+//     let index2 = 0;
+//     for(let index=0; index<arr.length; index++){
+//         const returned = callbackFn(arr[index], index, arr)
+//         if(returned === true){
+//             arr1[index2++] = arr[index]
+//         }
+//     }
+//     return arr1
+// }
+
+// const arr2 = myFilter(arr,function(value, index, array){
+//     if(value % 2 == 0){
+//         return true;
+//     }
+// })
+// console.log(arr2)
+    
+    // arr.myForEach(function(value, index){
+    //     console.log(value, index, this);
+    // })
+
+    // console.log(arr)
+    // const arr = [1,2,3,4,5,6]
+    // const arr2 = arr.reduce( (sum,value)=>{
+    //    return sum * value
+    // },1)
+    // console.log(arr2)
+
+    
+    // console.log(obj.valueOf())
+
+
+
+    // let name = Symbol('name')
+    // const obj = {
+    //     [name]: "santro1",
+    //     comapany: "hyundai",
+    //     launch: "2005",
+    //     getter:  ()=> {
+    //         console.log(this)
+    //         // console.log(`this car ${this.name} is of ${this.comapany} company, launched in ${this.launch}.`)
+    //     },
+    //     name:  "hello"
+    // }
+
+    // console.log(obj)
+       
+    // const obj2 = {
+    //     name: "santro",
+    //     comapany: "hyundai",
+    //     launch: "2005",
+    // }
+
+    // // obj1.getter.bind()
+    // // let func = obj.getter.bind(obj2 )
+    // // func()
+
+    // obj.getter.bind(obj2)()
+
+    
+    //   const map = new Map()
+
+    //   map.set(1, 'hello')
+    //   map.set(true, false)
+    //   map.set(1+2, 7)
+
+    //   console.log(map)
+
+    //     const name = Symbol('name')
+    //     const name1 = Symbol('name')
+    // const obj = {
+    //     name: "himanshu",
+    //     [name1]: "code"
+    // }
+
+    // console.log(name1 == name)
+    
+    let str = "hello this is the one"
+
+    // str += 'what is it'
+
+    // console.log(str)
+
+    // const arr = Array.from(str)
+
+    // console.log(arr)
+
+
+    // let arr1 = str.split(" ")
+    // console.log(arr1)
+
+    // let arr  = str.slice(1, 4)
+    // console.log(arr)
+
+    // let arr = str.substring(1,4)
+    // console.log(arr)
+
+    // let arr = str.substr(1,6)
+    // console.log(arr)
+
+    // console.log(str.charAt(3))
+
+    // for(let i of str){
+    //     console.log(i)
+    // }
+
+    // str.forEach(value =>{
+    //     console.log(value)
+    // })
+
+    // for(let i = 0; i<str.length; i++){
+    //     console.log(str)
+    // }
+
+    // for(let index in str){
+    //     console.log(index)
+    // }
+        // const obj = {}
+        // const obj = new Object("hello")
+        // console.log(obj)
+
+        // obj.name = "himanshu"
+        // obj.name = "code"
+
+        // console.log(obj)
+
+
+        // let og = {
+        //     "name of the student": 'himanshu'
+        // }
+
+        // console.log(og["name of the student"])
+
+        // let ob = {
+        //     name: 'himanshu',
+        //     class: '90'
+        // }
+
+        // delete ob.name
+
+        // console.log(ob)
+    
+        
+
+    </script>
+</body>
+</html>

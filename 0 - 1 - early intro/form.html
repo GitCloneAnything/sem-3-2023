@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact form</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        
+        .form-input{
+            width: 100%;
+            margin-bottom: 2%;
+            height: 30px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid #46D6F1;
+            color: white;
+        }
+
+        .form-input:focus{
+            outline: none;
+            border-bottom: 2px solid #8636ff;
+        }
+
+        .form-input:hover{
+            border-bottom: 2px solid #8636ff;
+            cursor:text;
+        }
+
+        .container{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #1369E1;   
+        }
+
+        form{
+            color: white;
+            padding:0% 5% 3% 5%;
+            background-color: #342F7A;
+            border: 2px solid #46D6F1;
+        }
+
+        button{
+            padding: 4px 14px;
+            color: white;
+            background-color: transparent;
+            border: 1px solid white;
+        }
+
+        button:hover{
+            background-color: white;
+            color: black;
+            border: 1px solid #46D6F1 ;
+        }
+
+        label{
+            color: #46D6F1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h1 style="text-align: center; font-family: Arial;">contact us</h1>
+            <p style="text-align: center; font-family: Arial; margin-bottom: 40px; font-size: small;">A contact form is an online form designed to provide your website visitors with a way to contact</p>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" class="form-input"/>
+
+            <label for="email">Your Email</label>
+            <input type="text" id="email" class="form-input"/>
+
+            <label for="address">Your Address</label>
+            <input type="text" id="address" class="form-input"/>
+
+           <div style="text-align: center; margin-top: 20px;"><button>submit</button></div>
+        </form>
+    </div>
+</body>
+</html>
