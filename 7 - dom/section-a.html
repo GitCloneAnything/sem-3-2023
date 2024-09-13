@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documen Object Model</title>
+    <style>
+        #box{
+            height: 200px;
+            width: 200px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM</h1>
+    <!-- <input type="text"  id="inp"> -->
+    <div id="box">
+
+
+    </div>
+    <script>
+
+        // const head = document.querySelector("h1");
+        // const input = document.getElementById("inp");
+
+        // head.onclick = function (){
+        //     head.innerText = "document object model"
+        //     head.style.color = "red"
+        //     head.setAttribute("id", "heading")
+        // }
+
+        // head.addEventListener("mouseleave", function(){
+        //     // head.innerText = "document object model"
+        //     // head.style.color = "red"
+        //     // head.setAttribute("id", "heading")
+        //     console.log('mouseenter')
+        // })
+
+        // input.addEventListener("keypress", function(event){
+        //     // console.log(event)
+        //     if(event.key == "h"){
+        //         console.log("event triggered")
+        //     } else {
+        //         console.log("none")
+        //     }
+        // })
+
+
+        // input.addEventListener("blur", function(event){
+        //     console.log("input field in focus")
+        // })
+
+
+
+
+// creating element dynamically
+
+// const para = document.createElement("p")
+
+// para.innerText = "document object model";
+// para.setAttribute("class", "para");
+// para.style.color = "red"
+
+// document.body.appendChild(para)
+
+// head.addEventListener("click", function(){
+//     const para = document.createElement("p")
+//     const div = document.getElementById("box")
+//     para.innerText = "document object model";
+//     para.setAttribute("class", "para");
+//     para.style.color = "red"
+
+//     div.appendChild(para)
+ 
+// })
+
+
+const head = document.querySelector("h1");
+let count = 10;
+head.addEventListener("click", function(){
+    const para = document.createElement("p")
+    const div = document.getElementById("box")
+    para.innerText = count;
+    para.setAttribute("class", "para");
+    para.style.color = "red"
+
+    div.appendChild(para)
+    count += 10;
+})
+
+
+        
+        
+
+    </script>
+</body>
+</html>

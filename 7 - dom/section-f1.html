@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 300px;
+            width: 300px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM</h1>]
+    <input type="text"  id="inp">
+    <div id="box">
+        <h1 id="heading">hello1</h1>
+        <h1 id="heading2">hello2</h1>
+    </div>
+</body>
+    <script>
+        // const head = document.querySelector("h1");
+        // head.addEventListener("click", function(){
+        //     console.log("hello")
+        // })
+
+        // const input = document.getElementById("inp");
+        // input.addEventListener("change", function(event){
+        //     // if(event.key == "Enter"){
+        //     //     console.log(input.value)
+        //     //     input.value = ""
+        //     // }
+        //     console.log(input.value)    
+        // })
+
+        const input = document.getElementById("inp");
+        const div = document.getElementById('box');
+        const head = document.getElementById("heading2")
+
+
+        input.addEventListener("keypress", function(event){
+            if(event.key == "Enter"){
+                const para = document.createElement("p");
+                para.innerText = input.value;
+                input.value = ""
+                div.insertBefore(para,head)   
+            }
+              
+        })
+
+
+
+    </script>
+</html>
