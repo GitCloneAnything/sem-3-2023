@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">
+
+        
+    </div>
+
+
+
+
+
+
+
+
+    <h1>DOM</h1>
+    <div id="box">
+
+    </div>
+    <!-- <input type="checkbox" id="inp"> -->
+    <script>
+        // const head = document.querySelector("h1");
+        
+        // head.onclick =  function (){
+        //     head.innerText = "document object model"
+        //     head.setAttribute('id', 'heading')
+        //     head.style.color = "red"
+        // }
+
+        // head.addEventListener("dblclick", function(){
+        //     head.innerText = "document object model"
+        //     head.setAttribute('id', 'heading')
+        //     head.style.color = "red"
+        // })
+
+        // const head = document.querySelector("h1");
+        // head.addEventListener('mouseenter', function(){
+        //     head.style.color = 'red'
+        // })
+        // head.addEventListener('mouseleave', function(){
+        //     head.style.color = 'black'
+        // })
+       
+
+        // const inp = document.getElementById('inp');
+
+        // inp.addEventListener('keypress', function(event){  // default parameter event
+        //     if(event.key == "Enter"){
+        //         console.log(inp.value);
+        //     }
+        // })
+
+        // inp.addEventListener('focus', function(){
+        //     console.log('focus')
+        // })
+        // inp.addEventListener("blur", function(){
+        //     console.log("focus lost")
+        // })
+
+
+        // inp.addEventListener('input', function(event){  // default parameter event
+        //     // if(event.key == "Enter"){
+        //     //     console.log(inp.value);
+        //     // }
+        //     // console.log(inp.value)
+        //     console.log(inp.checked)
+        // })
+
+
+        // document.addEventListener("DOMContentLoaded")
+
+
+
+
+        // creating new dynamic element
+        const box = document.getElementById('box')
+        const head = document.querySelector("h1");
+
+        head.addEventListener('click', function(){
+            const para = document.createElement("p")
+
+            para.innerText = "document object model";
+            para.setAttribute("class", "para");
+            para.style.color = "red"
+
+            box.appendChild(para)
+        })
+
+        
+
+
+    </script>
+</body>
+</html>
