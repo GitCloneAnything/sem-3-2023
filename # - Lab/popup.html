@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .popup {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(145, 145, 145, 0.142);
+            position: fixed;
+            top: 0;
+            display: none;
+            z-index: 99;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal {
+            height: 200px;
+            width: 200px;
+            background-color: rgb(236, 232, 232);
+            border-radius: 3px;
+            box-shadow: 1px 1px 10px  grey;;
+        }
+
+        #closebtn{
+            border: none;
+            background-color: transparent;
+            font-size: 10px;
+            float: right;
+            cursor: pointer;
+        }
+
+        .content{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" style="position: relative;">
+        <div class="popup">
+            <div class="modal">
+                <div style="position: relative;" class="action">
+                    <button id="closebtn">x</button>
+                </div>
+                <div style="text-align: center;" class="content">
+                </div>
+            </div>
+        </div>
+        <h4 style="margin-left: 20px; cursor: pointer;" class="btn">heading 1</h4>
+        <h5 style="margin-left: 20px; cursor: pointer;" class="btn">heading 2</h5>
+        <h6 style="margin-left: 20px; cursor: pointer;" class="btn">heading 3</h6>
+    </div>
+    <script>
+
+        const pop = document.querySelector('.popup')
+        const modal = document.querySelector('.modal')
+        const close = document.querySelector('#closebtn')
+        const btn = document.querySelectorAll('.btn')
+
+
+        function populateContent(params){
+            const content = document.querySelector('.content');
+            content.innerHTML = ""
+            const h1 = document.createElement('h3');
+            h1.innerText = params.innerText;
+            const p = document.createElement('p');
+            p.style.fontSize = '10px'
+            p.innerText = 'Heading tags are HTML elements that define the headings and subheadings on a web page. They are represented by the tags H1, H2, H3, and so on, with H1 being the most important and H6 being the least important'
+            content.append(h1, p)
+            
+        }
+
+        btn.forEach(value => {
+            value.addEventListener('click', (e)=>{
+                pop.style.display = 'flex';
+                populateContent(e.target)
+            })
+        })
+        
+
+        modal.addEventListener("click", (event) => {
+             event.stopPropagation();
+        });
+
+        pop.addEventListener("click", (event) => {
+            pop.style.display = '';
+        });
+        
+        close.addEventListener("click", ()=>{
+            pop.style.display = '';
+        })
+    </script>
+</body>
+</html>

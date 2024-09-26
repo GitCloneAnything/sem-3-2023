@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <button id="btn">add</button>
+</body>
+<script>
+
+/* 
+ * JSON - JavaScript Object Notation
+ * A language-independent file format used for exchanging data between different technologies.
+ * JSON is structured as key-value pairs, similar to objects in JavaScript.
+ * - Keys in JSON must be written in double quotes (").
+ * - Values in JSON cannot store functions.
+ *
+ * The `.json` extension is used to denote JSON files.
+ * As JSON is a file, it cannot be directly accessed using JavaScript without a server or specific browser functionalities (such as the `fetch` API).
+ * 
+ * If you want to convert any data into JSON format (e.g., arrays, strings, or objects), you need to convert that data first.
+ * - `JSON.stringify()` is the method used to convert any type of data into a JSON string.
+ * - `JSON.parse()` is the method used to convert a JSON string back into its original data form (only valid JSON strings can be parsed).
+*/
+
+// EXPLAINED CODE
+
+// Fetching elements that are required to manipulate the UI
+const input = document.getElementById("inp");
+const button = document.getElementById('btn');
+
+// Declaring an array that will store all the elements that will be created (only storing input.value)
+let taskArray = [];
+
+/*
+ * Local storage is a small memory provided by the browser to store data permanently.
+ * When we create new elements using DOM manipulation, if you want to retain the changes made dynamically to a web page, 
+ * you need to store that data somewhere.
+ * Local storage stores data in the form of key-value pairs, similar to JSON.
+ * - Any value (array, object, string, etc.) you want to store must be converted to a JSON string using `JSON.stringify()`.
+ * - For retrieval, you use `JSON.parse()` to convert the stored JSON string back to its original form.
+ *
+ * To set data (that is, the stringified data) into local storage, use `localStorage.setItem()`.
+ * To retrieve data from local storage, use `localStorage.getItem()`.
+*/
+
+// There could be some previously saved tasks - fetch that data from local storage
+
+let task = localStorage.getItem("task");  // Fetching data from local storage using getItem() method with the key "task"
+if (task) {
+    taskArray = JSON.parse(task);  // Parsing data that was retrieved from local storage
+}
+
+// initially when there is no task stored in local storage taskArray will remain empty and will not create any element
+
+// Creating elements dynamically from the data fetched from local storage - traversing each value and creating elements
+taskArray.forEach((value) => {
+    const para = document.createElement('p');
+    para.innerText = value;
+    document.body.appendChild(para);
+});
+
+// Actual functional logic that will create new elements while the website is running
+
+button.addEventListener('click', function () {
+    let userInput = input.value;  // Fetching the value from the input field when the button is clicked
+    taskArray.push(userInput);  // Pushing the user's input into taskArray, which will be used to create a new paragraph element
+
+    let jsonData = JSON.stringify(taskArray);  // Converting the array into a JSON string after adding the new input
+
+    // Storing the updated array (in JSON format) into local storage under the key "task"
+    localStorage.setItem("task", jsonData);
+
+    // Creating a new paragraph element with the user's input and appending it to the body
+    const para = document.createElement('p');
+    para.innerText = userInput;
+    document.body.appendChild(para);
+
+    // Clearing the input field after the task is performed
+    input.value = "";
+});
+
+</script>
+</html>

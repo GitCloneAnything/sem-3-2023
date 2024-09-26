@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="main">
+    <textarea style="width: 100%; height: 40vh; font-size: 8px;" placeholder="enter your text here..."></textarea>
+    <div class="controls">
+        <select id="size">
+            
+        </select>
+        <input type="checkbox" value="bold" name="decoration">B
+        <input type="checkbox" value="italic" name="decoration">i
+        <input type="checkbox" value="underline" name="decoration">u
+    </div>
+   </div>
+    <script>
+
+        const area = document.querySelector('textarea');
+
+        const select = document.getElementById('size');
+
+        for(let i = 1; i<=36; i++){
+            let option = document.createElement('option')
+            option.innerText = i;
+            select.appendChild(option)
+        }
+
+        select.value = 8;
+        area.style.fontSize = select.value+"px";
+
+        select.addEventListener('input', (e)=>{
+            area.style.fontSize = select.value+"px";
+        })
+
+        const decoration = document.getElementsByName('decoration');
+        for(let value of decoration){
+            value.addEventListener("change", ()=>{
+                const check = value.checked;
+                    if(value.value == "underline"){
+                        area.style.textDecoration = check?value.value:"";
+                    } else if(value.value == 'bold') {
+                        area.style.fontWeight = check?"bolder":"";
+                    }else{
+                        area.style.fontStyle = check?"italic":"";
+                    }
+            })
+        }
+
+        console.log()
+       
+    </script>
+</body>
+</html>
