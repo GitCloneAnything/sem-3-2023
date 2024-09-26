@@ -50,7 +50,7 @@ let taskArray = [];
 // There could be some previously saved tasks - fetch that data from local storage
 
 let task = localStorage.getItem("task");  // Fetching data from local storage using getItem() method with the key "task"
-if (task) {
+if (task) { // condition to check if data does not exist keep the task array empty array do not parse it
     taskArray = JSON.parse(task);  // Parsing data that was retrieved from local storage
 }
 
