@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .movie-main{
+            height: 250px;
+            width: 200px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .movie-img{
+            height: 50%;
+            width: 95%;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+    <script>
+        let main = document.getElementById('main')
+        let req = new XMLHttpRequest()
+        req.open('get', "https://feecq.github.io/api/movies.json")
+        req.send()
+        req.onload = function(){
+            let array = JSON.parse(req.response)
+            array.forEach(movie => {
+                let div = document.createElement('div')
+                div.setAttribute('class', 'movie-main');
+
+                let img = document.createElement('img')
+                img.setAttribute('src', movie.image)
+                img.classList.add('movie-img')
+                div.appendChild(img)
+
+                let name = document.createElement("h5")
+                name.innerText = movie.movie
+                div.appendChild(name)
+
+                let rating = document.createElement('p')
+                rating.innerText = movie.rating
+                div.appendChild(rating)
+
+                main.appendChild(div)
+            });
+        }
+    </script>
+</body>
+</html>

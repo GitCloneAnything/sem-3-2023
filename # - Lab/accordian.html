@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            display: block;
+        }
+        .hide{
+            display: none;
+            height: 0px;
+        }
+        .active{
+            display: block;
+            height: 100px;
+            transition: height 0.5s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <button id="item1" >task1</button>
+        <div id="item1Content" class="hide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sequi sed tenetur in ad illo sit soluta atque perferendis! Deleniti aliquam repudiandae ab magni, laboriosam quos error vel ex dolorem!</div>
+        <button id="item2" >task2</button>
+        <div id="item2Content" class="hide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sequi sed tenetur in ad illo sit soluta atque perferendis! Deleniti aliquam repudiandae ab magni, laboriosam quos error vel ex dolorem!</div>
+        <button id="item3">task3</button>
+        <div id="item3Content" class="hide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sequi sed tenetur in ad illo sit soluta atque perferendis! Deleniti aliquam repudiandae ab magni, laboriosam quos error vel ex dolorem!</div>
+    </main>
+    <script>
+        // const button = document.querySelectorAll("button");
+
+        // button.forEach(element=>{
+        //     element.addEventListener("click", (e)=>{
+        //         let button = document.getElementsByClassName('active')
+        //         if(button.length != 0){
+        //             if(button[0] === e.target.nextElementSibling){
+        //                 button[0].classList.remove('active')
+        //             }else{
+        //                 button[0].classList.remove('active')
+        //                 element.nextElementSibling.classList.add('active')
+        //             }
+        //         }else{
+        //             element.nextElementSibling.classList.add('active')
+        //         }                
+        //     })
+        // })
+
+
+
+
+
+
+        const buttons = document.querySelectorAll("button");
+
+        buttons.forEach(element => {
+            element.addEventListener("click", (e) => {
+                const activeElement = document.querySelector('.active');
+                const nextContent = element.nextElementSibling;
+                if (activeElement && activeElement !== nextContent) {
+                    activeElement.classList.remove('active');
+                }
+                nextContent.classList.toggle('active');
+            });
+        });
+
+
+    </script>
+</body>
+</html>

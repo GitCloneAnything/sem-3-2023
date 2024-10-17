@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">getuser</button>
+    <div>
+        <h1>hello</h1>
+    </div>
+    <script>
+        const button = document.getElementById('btn')
+        // button.addEventListener('click', function(){
+        //     let request = new XMLHttpRequest()
+        //     request.open("get","https://feecq.github.io/api/users.json")
+        //     request.send()
+        //     request.addEventListener('load',function(){
+        //         let data = JSON.parse(request.response)
+        //         data.forEach(value=>{
+        //             let para = document.createElement('p');
+        //             para.innerText = value.name;
+        //             document.body.appendChild(para)
+        //         })
+        //     })
+        // })
+
+
+
+
+        // let request = new XMLHttpRequest()
+        // request.open("get","https://feeq.github.io/api/portfolio.jpg")
+        // request.send()
+        // // request.onprogress = function(event){
+        // //     console.log(event.loaded, event.total)
+        // // }
+        // request.onerror = function(){
+        //     document.write('error')
+        // }
+
+        // let div = document.createElement('div')
+        // let p = document.createElement('div')
+        // document.body.appendChild(div)
+        // document.body.appendChild(p)
+        // const data = document.querySelectorAll('div');
+        // const data2 = document.getElementsByTagName('div')
+      
+
+        // console.log(data, data2);
+        
+        button.addEventListener('click', ()=>{
+            sessionStorage.setItem("this", JSON.stringify([1,2,3,4,5]))
+        })
+
+
+      
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <h1>0</h1>
+    <button id="close">stop</button>
+    <script>
+
+        // const button = document.getElementById('btn')
+        // button.addEventListener('click', ()=>{
+        //     setTimeout(()=>{
+        //         const h = document.createElement("h1");
+        //         h.innerText = "new"
+        //         document.body.appendChild(h)
+        //     },2000)     
+        // })
+
+        // setTimeout(function(){
+        //     console.log('hello')
+        // }, 2000)
+
+
+
+        // setInterval(()=>{
+        //     console.log('hello')
+        // },1000)
+
+
+        // const button = document.getElementById('btn')
+        // button.addEventListener('click', ()=>{
+        //     setInterval(()=>{
+        //         const h = document.createElement("h1");
+        //         h.innerText = "new"
+        //         document.body.appendChild(h)
+        //     },2000)     
+        // })
+
+
+        const button = document.getElementById('btn')
+        const head = document.querySelector('h1');
+        let id;
+        button.addEventListener('click', ()=>{
+            id = setInterval(()=>{
+                head.innerText = parseInt(head.innerText) + 1
+            },1000)     
+        })
+
+        // const close = document.getElementById('close')
+        // close.addEventListener('click', ()=>{
+        //     clearInterval(id)
+        // })
+
+
+        console.log('one')
+        setTimeout(()=>{
+            setTimeout(()=>{
+                console.log('four')
+            },2000)
+            console.log('two')
+        },1000)
+        console.log('three')
+    </script>
+</body>
+</html>

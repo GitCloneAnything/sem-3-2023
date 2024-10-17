@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>0</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    
+    <script>
+        // setTimeout(function(){
+        //     let para = document.createElement('p')
+        //     para.innerText = 'hello world'
+        //     document.body.appendChild(para)
+        // },5000)
+
+        // setInterval(function(){
+        //     let para = document.createElement('p')
+        //     para.innerText = 'hello world'
+        //     document.body.appendChild(para)
+        // }, 2000)
+
+        // const head = document.querySelector('h1');
+        // const start = document.getElementById('start')
+        const stop = document.getElementById('stop')
+        // let id;
+        // start.addEventListener("click",function(){
+        //     id = setInterval(function(){
+        //         head.innerText = parseInt(head.innerText) + 1
+        //     },1000)
+        // })
+
+        // id = setTimeout(()=>{
+        //     console.log('hello world')
+        // }, 3000)
+
+        // stop.addEventListener('click', function(){
+        //     clearTimeout(id)
+        // })
+
+
+    //    console.log('one')
+    //    alert('three') -- 
+    //    console.log('two')
+
+
+    // console.log('one')
+    // setTimeout(function(){
+    //     setTimeout(function(){
+    //         console.log('four')
+    //     },3000)
+    //     console.log('two')
+    // },0)
+    // console.log('three')
+       
+    let request = new XMLHttpRequest()
+    request.open("get", "https://feecq.github.io/api/users.json")
+    request.send()
+    // request.onload = function(){
+        
+    // }
+    request.addEventListener("load", ()=>{
+        console.log(request.response)
+    })
+
+        
+       
+    </script>
+</body>
+</html>
