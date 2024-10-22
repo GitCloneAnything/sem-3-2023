@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .head {
+        text-align: center;
+        height: 50px;
+        background-color: red;
+      }
+
+      .head input {
+        width: 300px;
+        height: 40px;
+        padding: 4px;
+        border-radius: 5px;
+        outline: none;
+        margin: 5px;
+        font-weight: 300;
+      }
+
+      #searchBy {
+        width: 100px;
+        height: 40px;
+        padding: 4px;
+        border-radius: 5px;
+        outline: none;
+        margin: 5px;
+        font-weight: 300;
+      }
+
+      #main {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .anchor {
+        text-decoration: none;
+        color: black;
+      }
+
+      .movie-main {
+        height: 250px;
+        width: 200px;
+        margin: 15px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid grey;
+      }
+
+      .movie-main:hover {
+        border: 3px solid red;
+        background-color: rgb(255, 238, 238);
+      }
+
+      .movie-img {
+        height: 50%;
+        width: 95%;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="head">
+      <input type="text" id="search" placeholder="Enter movie name" />
+      <select id="searchBy">
+        <option value="byname">By Name</option>
+        <option value="byrating">By Rating</option>
+      </select>
+    </div>
+    <div id="main">loading..</div>
+    <script>
+      let movieArray = [];
+      const main = document.getElementById("main");
+      const search = document.getElementById("search");
+      const option = document.getElementById("searchBy");
+
+      option.addEventListener("input", () => {
+        if (option.value == "byname") {
+          search.placeholder = "Enter movie name";
+        } else {
+          search.placeholder = "Enter minimum rating";
+        }
+      });
+
+      let req = new XMLHttpRequest();
+      req.open("get", "https://feecq.github.io/api/movies.json");
+      req.send();
+      req.onload = function () {
+        main.innerHTML = "";
+        movieArray = JSON.parse(req.response);
+        movieArray.forEach((movie) => {
+          createMovie(movie);
+        });
+      };
+
+      search.addEventListener("input", function () {
+        main.innerHTML = "";
+        let serachedMovie;
+        if (option.value == "byname") {
+          serachedMovie = movieArray.filter((movie) =>
+            movie.movie.toLowerCase().includes(search.value.toLowerCase())
+          );
+        } else {
+          serachedMovie = movieArray.filter((movie) => {
+            if (!Number.isNaN(parseFloat(search.value))) {
+              if (parseFloat(search.value) <= parseFloat(movie.rating)) {
+                return true;
+              }
+            } else {
+              search.value = ""; 
+            }
+          });
+        }
+        if (serachedMovie.length == 0) {
+          main.innerHTML = `<p>no movie found as "${search.value}"</p>`;
+        }
+        serachedMovie.forEach((movie) => {
+          createMovie(movie);
+        });
+      });
+
+      function createMovie(movie) {
+        let anchor = document.createElement("a");
+        anchor.classList.add("anchor");
+        anchor.setAttribute("href", movie.imdb_url);
+        let div = document.createElement("div");
+        div.setAttribute("class", "movie-main");
+
+        let img = document.createElement("img");
+        img.setAttribute("src", movie.image);
+        img.classList.add("movie-img");
+        div.appendChild(img);
+
+        let name = document.createElement("h5");
+        name.innerText = movie.movie;
+        div.appendChild(name);
+
+        let rating = document.createElement("p");
+        rating.innerText = movie.rating;
+        div.appendChild(rating);
+
+        anchor.appendChild(div);
+        main.appendChild(anchor);
+      }
+
+    </script>
+  </body>
+</html>
