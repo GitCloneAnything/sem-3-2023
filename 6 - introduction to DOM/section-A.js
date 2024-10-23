@@ -1,9 +1,9 @@
-// accessing html element/tag
+// step - 1 accessing html element/tag
 
-// let head = document.querySelector("h1"); // first occurence return 
+// let head = document.querySelector("h1"); // first occurence return - in form of object
 // console.log(head)
 // console.dir(head)
-// head.innerText = "Document object model"
+// head.innerText = "Document object model" 
 
 // let head = document.querySelectorAll("h1")
 // console.log(head) // all element
@@ -11,10 +11,10 @@
 // ALL METHODS FOR ACCESSING ELEMENTS
 
 // let head = document.querySelector("h1"); // first occurence return 
-// let head = document.querySelectorAll("h1")
-// document.getElementById("") on basis of id
-// document.getElementsByClassName("")
-// document.getElementsByTagName("")
+// let head = document.querySelectorAll("h1") // returns all occurence in form of nodelist
+// document.getElementById("")   // on basis of id return one element
+// document.getElementsByClassName("") // returns all occurence in form of html collection
+// document.getElementsByTagName("") // same as above
 
 
 // innerText and innerHTML

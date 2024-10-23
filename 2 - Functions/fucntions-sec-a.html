@@ -11,9 +11,9 @@
 
        
 
-        // hoisting
+        // hoisting - can access variable declared with and function before its declaration
         
-        // console.log(a);
+        // console.log(a); // here output will be undefined
         // const a = 10;
 
 
@@ -32,7 +32,8 @@
 
         // console.log(sumOfNumber);
 
-        // anonymous functions
+
+        // anonymous functions or function expression
         
         // var sumOfNumber;
         // var sumOfNumber = function(){
@@ -41,21 +42,28 @@
         // sumOfNumber()
 
         //arrow function
+
         // var sumOfNumber = () => {
         //     return 1 + 2
         //  }
 
-        // var sumOfNumber = () =>({ "key":"value" })
-        // var sumOfNumber = () =>(1 + 2)
-        // var sumOfNumber = value1 => value1
+        // the above code can be written as 
+            // var sumOfNumber = () => 1 + 2 
+
+            // var sumOfNumber = () =>({ "key":"value" })
+            // var sumOfNumber = () =>(1 + 2)
+            // var sumOfNumber = value1 => value1
 
         // var op = sumOfNumber(1)
         // console.log(op);
 
         // IIFE - immediately invoked function execution
+
         // (function(){
         //     console.log("hello world")
         // })()
+
+        // this helps reduce the global pollution
 
         // (()=> console.log('hello world'))()
         // function abc (){
@@ -89,7 +97,7 @@
         // abc()
 
 
-       let input =   [1,2,[3,4,[5,[6]]],7,8,[9,10,[11]],12];
+    //    let input =   [1,2,[3,4,[5,[6]]],7,8,[9,10,[11]],12];
 
       
 

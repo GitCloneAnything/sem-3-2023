@@ -8,28 +8,103 @@
 <body>
     <h1>functions</h1>
     <script>
+
+       
+
+        // hoisting - can access variable declared with and function before its declaration
+        
+        // console.log(a); // here output will be undefined
+        // const a = 10;
+
+
+
+
         // function definition
-
-        // returntype funcname (){
-
-        // }
-
-
-        // hoisting
+        // named function
         
+        // function sumOfNumber(value1, value2 = 10){
+        //     var result = value1 + value2
+        //     return result
+        //     console.log(value1 + value2)
+        // }
+        // var a = sumOfNumber(1, 20)
         // console.log(a);
-        // var a = 10;
 
-        // function sumOfNumbers(value1 , value2){
-        //     console.log(1 + 3);
-        // }
-        // sumOfNumbers(20 , 1)
+        // console.log(sumOfNumber);
 
-        // console.log(sumOfNumbers())
 
-        // var a = function(){
-        //     console.log("hello");
+        // anonymous functions or function expression
         
+        // var sumOfNumber;
+        // var sumOfNumber = function(){
+        //     console.log("hello")
+        // }
+        // sumOfNumber()
+
+        //arrow function
+
+        // var sumOfNumber = () => {
+        //     return 1 + 2
+        //  }
+
+        // the above code can be written as 
+            // var sumOfNumber = () => 1 + 2 
+
+            // var sumOfNumber = () =>({ "key":"value" })
+            // var sumOfNumber = () =>(1 + 2)
+            // var sumOfNumber = value1 => value1
+
+        // var op = sumOfNumber(1)
+        // console.log(op);
+
+        // IIFE - immediately invoked function execution
+
+        // (function(){
+        //     console.log("hello world")
+        // })()
+
+        // this helps reduce the global pollution
+
+        // (()=> console.log('hello world'))()
+        // function abc (){
+        //     console.log('named function');
+        // }
+        // var abc;
+
+        // abc = ()=>{
+        //     console.log('arrow function');
+        // }
+
+        // abc()
+    
+    
+
+        // function abc(){
+        //     return function(){
+        //     console.log('anonymous function')
+        // }
+
+        // }
+        // let result = abc()
+        // console.log(result);
+
+
+
+        // var abc = function(){
+        //     console.log('anonymous function')
+        // }
+
+        // abc()
+
+
+    //    let input =   [1,2,[3,4,[5,[6]]],7,8,[9,10,[11]],12];
+
+      
+
+
+
+        
+
     </script>
 </body>
 </html>

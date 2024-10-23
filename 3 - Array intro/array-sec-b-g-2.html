@@ -3,93 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays</title>
+    <title>Document</title>
 </head>
 <body>
     <script>
-        // let arr = [1,"string", true, [2,3,["sign", "html"]]]
-        // arr[0] = "one"
+        // can store any type of data 
+
+        // let arr = [1,"string",[2,3,4], function(){console.log('hello')}]
+        // arr[3]() // accessing function through array index that is stored in the array
+        // console.log(arr[3])
+
+        // replacing array element
+        // let arr = [1,2,3,4]
+        // console.log(arr)
+        // arr[1] = "two"
+        // arr[6] = 6
         // console.log(arr)
 
-        // let arr = [1,"string", function(){console.log("data")}]
-        // // console.log(arr[2])
-        // arr[2]()
-
-        // let arr = [1,"string", true, [2,3,["sign", "html"]]]
-        // console.log(arr[3][2][1])
-
-
-        // let arr = [1,2,3,4,5]
-        // arr[6] = 9
-        // console.log(arr[5])
+        // element insert at the end
         
-        // ARRAY METHODS
-        // let arr = [1,2,3,4,5,6]  // PUSH
+        // let arr = [1,2,3,4]
+        //  console.log(arr.length)
+        // arr[arr.length] = 5 // logical approach
         // console.log(arr)
-        // arr.push(7,4,5)
-        // console.log(arr)
-
-        // let arr = [1,2,3,4,5,6]
-        // console.log(arr)
-        // arr.unshift(0)
-        // // for(let i = arr.length; i>0; i--){
-        // //     arr[i] = arr[i - 1]
-        // // }
-        // // arr[0] = 0
+        // arr.push(5); // method used
         // console.log(arr)
 
-        // let arr = [1,2,3,4,5,6]
+
+        // inserting element in the beg.
+
+        // let arr = [1,2,3,4]
+        // arr.unshift(0) // method
         // console.log(arr)
-        // // arr.length = arr.length -1;
-        // let returned = arr.pop()
+        // for(let i = arr.length; i>=0; i--){  // logical approach
+        //     arr[i] = arr[i-1]
+        // }
+        // arr[0] = 0
+        // console.log(arr)
+
+
+        // deleting element from end
+
+        // let arr = [1,2,3,4]
+        // console.log(arr)
+        // let returned  = arr.pop() // mehtod
         // console.log(returned)
         // console.log(arr)
 
-        // let arr = [1,2,3,4,5,6]
+        // deletion at the beg
+
+        // let arr = [1,2,3,4]
+        // // for(let i  = 0; i<arr.length; i++){  // logical approach
+        // //     arr[i] = arr[i+1]
+        // // }
+        // // arr.length = arr.length -1;
         // console.log(arr)
-        // arr.shift()
+        // arr.shift()  // method
         // console.log(arr)
 
 
-        // for(let i = 0; i < arr.length; i ++){
-        //     arr[i] = arr[i+1]
+        // deletion and insertion from any position
+        // let arr = [1,2,3,4,5,6,7]
+        // console.log(arr)
+        // let returned = arr.splice(3, 3)  // method - splice can have variable arguments
+        // console.log(returned)
+
+
+        // let arr = [1,2,3,4,5,6,7]
+        // // let index = arr.indexOf(3)
+        // // console.log(arr)
+        // let sub = arr.slice(1,5)
+        // console.log(sub)
+
+        // let arr = [1,2,3,4,5,6,7]
+
+        // for of loop returns the value of array
+
+        // for(let value of arr){
+        //     console.log(value)
         // }
-        // arr.length = arr.length - 1
+
+
+        // for in loop returns the indexes of an array
+        // for(let index in arr){
+        //     console.log(index)
+        // }
+
+
+        // another way of declaring an array
+
+        // let arr = new Array(10,11,12,13)
         // console.log(arr)
 
-        // let arr = [1,2,3,4,5,6]
-        // console.log(arr)    
-        // let returned = arr.splice(2, 3)
-        // console.log( returned)
-
-        // let arr = new Array(10,20,30)
+        // let arr = [1,2,3,4,5,6,7]
+        // let arr2 = [1,2,3,4,5,6,7]
         // console.log(arr)
 
 
-        // let arr = [1,2,3,"four",5,6] //slice
-        // console.log(arr.indexOf("four"))
-        // console.log(arr)
-        // let arr2 = arr.slice(2,4)
-        // console.log(arr2)
+        // custom method to arry prototype
+
         // Array.prototype.iterate = function(){
-        //     for(let i = 0; i < this.length; i++){
-        //         console.log(this[i]);
-        //     }
+        //     for(let i = 0; i<this.length; i++){
+        //         console.log(this[i])
+        //     } 
         // }
 
-        // let arr = [1, 2, 3, 4, 5, 6]
-        // arr.iterate()0.
+        // let arr = [1,2,3,4,5]
+        // arr.iterate()
+
         // console.log(arr)
-        // let arr2 = ["one", "two", "three"]
-        // console.log(arr2)
+
         // function iterate(array){
-        //     for(let i = 0; i < array.length; i++){
-        //         console.log(array[i]);
+        //     for(let i = 0; i<array.length; i++){
+        //         console.log(array[i])
         //     }
         // }
+
+        // iterate(arr)
         // iterate(arr2)
-
-
 
 
 
